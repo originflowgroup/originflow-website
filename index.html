@@ -268,6 +268,26 @@
     nav ul { display: none; }
     .footer-inner { flex-direction: column; text-align: center; }
   }
+
+  /* COOKIE BANNER */
+  .cookie-banner {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    padding: 20px 24px;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+  }
+  .cookie-banner.show { transform: translateY(0); }
+  .cookie-banner p { color: var(--text-dim); font-size: 0.9rem; max-width: 500px; margin: 0; }
+  .cookie-banner .btn-primary { padding: 10px 22px; font-size: 0.9rem; }
 </style>
 </head>
 <body>
@@ -408,6 +428,11 @@
   <p class="copyright">© 2026 Originflow Group. All rights reserved.</p>
 </footer>
 
+<div class="cookie-banner" id="cookieBanner">
+  <p>We use cookies to improve your experience on this site. By continuing, you agree to our use of cookies.</p>
+  <button class="btn-primary" id="acceptCookies">Accept</button>
+</div>
+
 <script>
   const form = document.getElementById('contactForm');
   const msg = document.getElementById('formMsg');
@@ -436,6 +461,19 @@
 
     msg.style.display = 'block';
     form.reset();
+  });
+
+  // Cookie consent banner
+  const cookieBanner = document.getElementById('cookieBanner');
+  const acceptBtn = document.getElementById('acceptCookies');
+
+  if (!localStorage.getItem('cookieConsent')) {
+    setTimeout(() => cookieBanner.classList.add('show'), 500);
+  }
+
+  acceptBtn.addEventListener('click', function() {
+    localStorage.setItem('cookieConsent', 'true');
+    cookieBanner.classList.remove('show');
   });
 </script>
 

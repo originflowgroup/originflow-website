@@ -19,6 +19,7 @@
     --text: #f2f2f5;
     --text-dim: #9999a8;
     --accent: #7c5cff;
+    --accent-text: #a78bfa;
     --accent-glow: #7c5cff33;
   }
 
@@ -45,7 +46,7 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
-    background: rgba(10,10,15,0.8);
+    background: rgba(10,10,15,0.92);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
   }
@@ -58,7 +59,7 @@
     align-items: center;
   }
   .logo { font-weight: 700; font-size: 1.2rem; letter-spacing: -0.02em; }
-  .logo span { color: var(--accent); }
+  .logo span { color: var(--accent-text); }
   nav ul { display: flex; gap: 32px; list-style: none; }
   nav ul li a { color: var(--text-dim); font-size: 0.95rem; transition: color 0.2s; }
   nav ul li a:hover { color: var(--text); }
@@ -131,7 +132,7 @@
   /* SECTION HEADER */
   .section-header { text-align: center; margin-bottom: 60px; }
   .section-header .eyebrow {
-    color: var(--accent);
+    color: var(--accent-text);
     font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -175,7 +176,7 @@
   }
   .card h3 { font-size: 1.25rem; margin-bottom: 10px; font-weight: 600; }
   .card p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 20px; }
-  .card a { color: var(--accent); font-size: 0.9rem; font-weight: 600; }
+  .card a { color: var(--accent-text); font-size: 0.9rem; font-weight: 600; }
   .card a:hover { text-decoration: underline; }
 
   /* HOW IT WORKS */
@@ -189,7 +190,7 @@
   .step-num {
     width: 40px; height: 40px;
     border: 1px solid var(--accent);
-    color: var(--accent);
+    color: var(--accent-text);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -197,7 +198,7 @@
     margin: 0 auto 16px;
     font-weight: 700;
   }
-  .step h4 { margin-bottom: 8px; font-size: 1.05rem; }
+  .step h3 { margin-bottom: 8px; font-size: 1.05rem; }
   .step p { color: var(--text-dim); font-size: 0.9rem; }
 
   /* MISSION */
@@ -219,6 +220,34 @@
     border-radius: 20px;
     padding: 48px;
   }
+  .contact-methods {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .contact-method {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: var(--text);
+    transition: border-color 0.2s;
+  }
+  .contact-method:hover { border-color: var(--accent); }
+  .contact-method .icon { font-size: 1.1rem; }
+  .divider-text {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+  }
   .form-group { margin-bottom: 20px; }
   label { display: block; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-dim); }
   input, textarea {
@@ -234,7 +263,7 @@
   input:focus, textarea:focus { outline: none; border-color: var(--accent); }
   textarea { resize: vertical; min-height: 100px; }
   .contact-box button { width: 100%; margin-top: 8px; }
-  .form-msg { text-align: center; margin-top: 16px; font-size: 0.9rem; color: var(--accent); display: none; }
+  .form-msg { text-align: center; margin-top: 16px; font-size: 0.9rem; color: var(--accent-text); display: none; }
 
   /* FOOTER */
   footer { border-top: 1px solid var(--border); padding: 40px 24px; }
@@ -259,9 +288,10 @@
     align-items: center;
     justify-content: center;
     color: var(--text-dim);
+    font-size: 0.9rem;
     transition: border-color 0.2s, color 0.2s;
   }
-  .social-icons a:hover { border-color: var(--accent); color: var(--accent); }
+  .social-icons a:hover { border-color: var(--accent); color: var(--accent-text); }
   .copyright { color: var(--text-dim); font-size: 0.85rem; text-align: center; margin-top: 24px; }
 
   @media (max-width: 768px) {
@@ -303,6 +333,8 @@
     <a href="#contact" class="nav-cta">Get in Touch</a>
   </nav>
 </header>
+
+<main>
 
 <section class="hero">
   <div class="container">
@@ -357,17 +389,17 @@
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
-        <h4>Tell us your need</h4>
+        <h3>Tell us your need</h3>
         <p>Share what matters — a family story, a business call line, or a parent to look after.</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <h4>We build with AI</h4>
+        <h3>We build with AI</h3>
         <p>Our AI systems handle the heavy lifting — restoration, translation, or real-time monitoring.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <h4>You stay in control</h4>
+        <h3>You stay in control</h3>
         <p>Simple dashboards and check-ins keep you informed, always.</p>
       </div>
     </div>
@@ -391,6 +423,18 @@
       <h2>Let's build something meaningful</h2>
     </div>
     <div class="contact-box">
+
+      <div class="contact-methods">
+        <a href="mailto:originflowgroup@gmail.com" class="contact-method">
+          <span class="icon">✉️</span> originflowgroup@gmail.com
+        </a>
+        <a href="https://wa.me/919985632705" target="_blank" rel="noopener" class="contact-method">
+          <span class="icon">💬</span> WhatsApp: +91-9985632705
+        </a>
+      </div>
+
+      <p class="divider-text">Or send us a message directly</p>
+
       <form id="contactForm">
         <div class="form-group">
           <label for="name">Name</label>
@@ -412,6 +456,8 @@
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="footer-inner">
     <div class="logo">Origin<span>flow</span></div>
@@ -420,9 +466,9 @@
       <li><a href="terms.html">Terms & Conditions</a></li>
     </ul>
     <div class="social-icons">
+      <a href="https://wa.me/919985632705" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+      <a href="mailto:originflowgroup@gmail.com" aria-label="Email">✉️</a>
       <a href="#" aria-label="Instagram">IG</a>
-      <a href="#" aria-label="WhatsApp">WA</a>
-      <a href="#" aria-label="LinkedIn">IN</a>
     </div>
   </div>
   <p class="copyright">© 2026 Originflow Group. All rights reserved.</p>

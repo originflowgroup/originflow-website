@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Originflow Group — AI Built for Real Human Moments</title>
+<meta name="description" content="Originflow Group builds human-centered AI: heritage preservation, vernacular voice agents, and eldercare technology.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔮</text></svg>">
+<meta property="og:title" content="Originflow Group — AI Built for Real Human Moments">
+<meta property="og:description" content="Heritage preservation, vernacular voice agents, and eldercare AI — built with care.">
+<meta property="og:type" content="website">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #0a0a0f;
+    --bg-card: #14141c;
+    --border: #262632;
+    --text: #f2f2f5;
+    --text-dim: #9999a8;
+    --accent: #7c5cff;
+    --accent-glow: #7c5cff33;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* NAV */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(10,10,15,0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo { font-weight: 700; font-size: 1.2rem; letter-spacing: -0.02em; }
+  .logo span { color: var(--accent); }
+  nav ul { display: flex; gap: 32px; list-style: none; }
+  nav ul li a { color: var(--text-dim); font-size: 0.95rem; transition: color 0.2s; }
+  nav ul li a:hover { color: var(--text); }
+  .nav-cta {
+    background: var(--accent);
+    color: #fff !important;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 180px 24px 120px;
+    text-align: center;
+    position: relative;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    z-index: -1;
+  }
+  .hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    max-width: 850px;
+    margin: 0 auto 24px;
+    background: linear-gradient(180deg, #ffffff 0%, #b8b8c8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero p {
+    font-size: 1.15rem;
+    color: var(--text-dim);
+    max-width: 600px;
+    margin: 0 auto 40px;
+  }
+  .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    display: inline-block;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px var(--accent-glow); }
+  .btn-secondary {
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--accent); }
+
+  /* SECTION HEADER */
+  .section-header { text-align: center; margin-bottom: 60px; }
+  .section-header .eyebrow {
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .section-header h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  /* SERVICES */
+  .services { padding: 100px 0; }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    transition: transform 0.25s, border-color 0.25s;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+  }
+  .card-icon {
+    width: 48px; height: 48px;
+    background: var(--accent-glow);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+  .card h3 { font-size: 1.25rem; margin-bottom: 10px; font-weight: 600; }
+  .card p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 20px; }
+  .card a { color: var(--accent); font-size: 0.9rem; font-weight: 600; }
+  .card a:hover { text-decoration: underline; }
+
+  /* HOW IT WORKS */
+  .how { padding: 100px 0; background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    text-align: center;
+  }
+  .step-num {
+    width: 40px; height: 40px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-weight: 700;
+  }
+  .step h4 { margin-bottom: 8px; font-size: 1.05rem; }
+  .step p { color: var(--text-dim); font-size: 0.9rem; }
+
+  /* MISSION */
+  .mission { padding: 100px 0; text-align: center; }
+  .mission p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--text-dim);
+  }
+
+  /* CONTACT */
+  .contact { padding: 100px 0 120px; }
+  .contact-box {
+    max-width: 560px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 48px;
+  }
+  .form-group { margin-bottom: 20px; }
+  label { display: block; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-dim); }
+  input, textarea {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+  }
+  input:focus, textarea:focus { outline: none; border-color: var(--accent); }
+  textarea { resize: vertical; min-height: 100px; }
+  .contact-box button { width: 100%; margin-top: 8px; }
+  .form-msg { text-align: center; margin-top: 16px; font-size: 0.9rem; color: var(--accent); display: none; }
+
+  /* FOOTER */
+  footer { border-top: 1px solid var(--border); padding: 40px 24px; }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-links { display: flex; gap: 24px; list-style: none; }
+  .footer-links a { color: var(--text-dim); font-size: 0.9rem; }
+  .footer-links a:hover { color: var(--text); }
+  .social-icons { display: flex; gap: 16px; }
+  .social-icons a {
+    width: 36px; height: 36px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dim);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .social-icons a:hover { border-color: var(--accent); color: var(--accent); }
+  .copyright { color: var(--text-dim); font-size: 0.85rem; text-align: center; margin-top: 24px; }
+
+  @media (max-width: 768px) {
+    nav ul { display: none; }
+    .footer-inner { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Origin<span>flow</span></div>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#mission">Mission</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get in Touch</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>AI that understands your family, your language, your parents.</h1>
+    <p>Originflow Group builds human-centered AI — technology that preserves memory, speaks your language, and cares for the people who matter most.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Get in Touch</a>
+      <a href="#services" class="btn-secondary">Explore Services</a>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Our Services</span>
+      <h2>Three products. One mission.</h2>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-icon">🖼️</div>
+        <h3>AI Legacy Studio</h3>
+        <p>AI-restored family photos, translated interviews, and a recreated elder voice narrating their own story — preserving heritage for generations to come.</p>
+        <a href="#contact">Learn more →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🗣️</div>
+        <h3>Vernacular Voice-AI Agency</h3>
+        <p>An AI voice agent that answers business calls and WhatsApp messages in Hindi, Telugu, and other regional languages — built for small businesses.</p>
+        <a href="#contact">Learn more →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">💙</div>
+        <h3>AI for Aging</h3>
+        <p>Voice check-ins, medication and vitals monitoring, fall alerts, and a family dashboard — giving adult children peace of mind from anywhere.</p>
+        <a href="#contact">Learn more →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">How It Works</span>
+      <h2>Simple to start, built to last</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Tell us your need</h4>
+        <p>Share what matters — a family story, a business call line, or a parent to look after.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>We build with AI</h4>
+        <p>Our AI systems handle the heavy lifting — restoration, translation, or real-time monitoring.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>You stay in control</h4>
+        <p>Simple dashboards and check-ins keep you informed, always.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mission" id="mission">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Our Mission</span>
+      <h2>AI for real human moments</h2>
+    </div>
+    <p>We believe AI should serve the moments that matter most — a grandmother's voice, a customer's own language, a parent's wellbeing. Originflow Group exists to build technology that feels less like software, and more like care.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Get in Touch</span>
+      <h2>Let's build something meaningful</h2>
+    </div>
+    <div class="contact-box">
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit" class="btn-primary">Get in Touch</button>
+        <p class="form-msg" id="formMsg">Thanks! We'll be in touch soon.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="logo">Origin<span>flow</span></div>
+    <ul class="footer-links">
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms & Conditions</a></li>
+    </ul>
+    <div class="social-icons">
+      <a href="#" aria-label="Instagram">IG</a>
+      <a href="#" aria-label="WhatsApp">WA</a>
+      <a href="#" aria-label="LinkedIn">IN</a>
+    </div>
+  </div>
+  <p class="copyright">© 2026 Originflow Group. All rights reserved.</p>
+</footer>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const msg = document.getElementById('formMsg');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    if (form.website.value !== '') {
+      return;
+    }
+
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    if (!name || !email || !message) {
+      alert('Please fill in all fields.');
+      return;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    msg.style.display = 'block';
+    form.reset();
+  });
+</script>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://originflowgroup.vercel.app/sitemap.xml
+Sitemap: https://originflow-website.vercel.app/sitemap.xml

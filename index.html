@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Originflow Group — AI Built for Real Human Moments</title>
-<meta name="description" content="Originflow Group builds human-centered AI: heritage preservation, vernacular voice agents, and eldercare technology.">
+<meta name="description" content="Originflow Group builds human-centered AI: daily check-in calls that keep families connected to aging parents, and vernacular voice agents for small businesses.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔮</text></svg>">
 <meta property="og:title" content="Originflow Group — AI Built for Real Human Moments">
-<meta property="og:description" content="Heritage preservation, vernacular voice agents, and eldercare AI — built with care.">
+<meta property="og:description" content="Daily AI check-in calls for aging parents and vernacular voice agents for small businesses — built with care.">
 <meta property="og:type" content="website">
 <meta name="google-site-verification" content="FNhDXSYMLnDTPcVk_PZOxUwBWvP74rN_e0LpqPJ1pMo" />
 <style>
@@ -182,13 +182,50 @@
   .card a { color: var(--accent-text); font-size: 0.9rem; font-weight: 600; }
   .card a:hover { text-decoration: underline; }
 
-  /* DEMOS */
-  .demos { padding: 40px 0 100px; }
-  .demo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px;
+  /* AI FOR AGING */
+  .aging { padding: 100px 0; background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .aging-intro {
+    max-width: 760px;
+    margin: 0 auto 48px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-dim);
   }
+  .aging-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .aging-why {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  .aging-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+  }
+  .aging-card .step-num { margin: 0 0 16px; }
+  .aging-card h3 { font-size: 1.1rem; margin-bottom: 10px; font-weight: 600; }
+  .aging-card p { color: var(--text-dim); font-size: 0.95rem; }
+  .aging-card ul { list-style: none; color: var(--text-dim); font-size: 0.95rem; }
+  .aging-card li { padding-left: 26px; position: relative; margin-bottom: 10px; }
+  .aging-card li::before { content: "✓"; position: absolute; left: 0; color: var(--accent-text); font-weight: 700; }
+  .aging-note {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-bottom: 28px;
+  }
+  .aging-cta { text-align: center; }
+
+  /* DEMO */
+  .demos { padding: 100px 0; }
+  .demo-wrap { max-width: 760px; margin: 0 auto; }
   .demo-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -215,7 +252,7 @@
   }
   .demo-body h3 { font-size: 1.2rem; margin-bottom: 10px; font-weight: 600; }
   .demo-body p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 20px; }
-  .demo-body .btn-primary { margin-top: auto; align-self: flex-start; padding: 12px 24px; font-size: 0.95rem; }
+  .demo-body .btn-primary { align-self: flex-start; padding: 12px 24px; font-size: 0.95rem; }
   .demo-note {
     text-align: center;
     color: var(--text-dim);
@@ -342,7 +379,6 @@
   @media (max-width: 768px) {
     nav ul { display: none; }
     .footer-inner { flex-direction: column; text-align: center; }
-    .demo-grid { grid-template-columns: 1fr; }
   }
 
   /* COOKIE BANNER */
@@ -373,7 +409,8 @@
     <div class="logo">Origin<span>flow</span></div>
     <ul>
       <li><a href="#services">Services</a></li>
-      <li><a href="#demos">Demos</a></li>
+      <li><a href="#aging">AI for Aging</a></li>
+      <li><a href="#demo">Demo</a></li>
       <li><a href="#how">How it works</a></li>
       <li><a href="#mission">Mission</a></li>
     </ul>
@@ -386,7 +423,7 @@
 <section class="hero">
   <div class="container">
     <h1>AI that understands your family, your language, your parents.</h1>
-    <p>Originflow Group builds human-centered AI — technology that preserves memory, speaks your language, and cares for the people who matter most.</p>
+    <p>Originflow Group builds human-centered AI — technology that speaks your language and cares for the people who matter most.</p>
     <div class="hero-btns">
       <a href="#contact" class="btn-primary">Get in Touch</a>
       <a href="#services" class="btn-secondary">Explore Services</a>
@@ -398,55 +435,85 @@
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">Our Services</span>
-      <h2>Three services. One mission.</h2>
+      <h2>Two services. One mission.</h2>
     </div>
     <div class="cards">
 
       <div class="card">
-        <div class="card-icon">🖼️</div>
-        <h3>AI Legacy Studio</h3>
-        <p>AI-restored family photos, translated interviews, and a recreated elder voice narrating their own story — preserving heritage for generations to come.</p>
-        <a href="#contact">Learn more →</a>
+        <div class="card-icon">💙</div>
+        <h3>AI for Aging</h3>
+        <p>A warm daily phone check-in for your aging parent about medications, mood, and concerns, followed by a plain-language summary and a simple family dashboard. No new app or device needed.</p>
+        <a href="#aging">Learn more →</a>
       </div>
 
       <div class="card">
         <div class="card-icon">🗣️</div>
         <h3>Vernacular Voice-AI Agency</h3>
         <p>An AI voice agent that answers business calls and WhatsApp messages in Hindi, Telugu, and other regional languages — built for small businesses.</p>
-        <a href="#contact">Learn more →</a>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">💙</div>
-        <h3>AI for Aging</h3>
-        <p>Voice check-ins, medication and vitals monitoring, fall alerts, and a family dashboard — giving adult children peace of mind from anywhere.</p>
-        <a href="#contact">Learn more →</a>
+        <a href="#demo">See the demo →</a>
       </div>
 
     </div>
   </div>
 </section>
 
-<section class="demos" id="demos">
+<section class="aging" id="aging">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">AI for Aging</span>
+      <h2>Peace of mind for families. Independence for parents.</h2>
+    </div>
+
+    <p class="aging-intro">An AI makes a warm, daily phone call to your aging parent, asking about medications, mood, and any concerns. You then get a plain-language summary through a simple family dashboard. Your parent needs no new app or device, just a phone call.</p>
+
+    <div class="aging-steps">
+      <div class="aging-card">
+        <div class="step-num">1</div>
+        <h3>A warm daily call</h3>
+        <p>Our AI calls your parent every day for a friendly check-in about medications, mood, and anything on their mind.</p>
+      </div>
+      <div class="aging-card">
+        <div class="step-num">2</div>
+        <h3>A clear summary for you</h3>
+        <p>You receive a plain-language update on how the call went, with early warnings when something seems off.</p>
+      </div>
+      <div class="aging-card">
+        <div class="step-num">3</div>
+        <h3>One family dashboard</h3>
+        <p>Everyone in the family sees the same simple dashboard, instead of juggling 4-5 separate apps.</p>
+      </div>
+    </div>
+
+    <div class="aging-why">
+      <div class="aging-card">
+        <h3>The problem we solve</h3>
+        <p>Millions of adult children live far from their aging parents and constantly worry whether they're okay, while juggling separate apps for medications, appointments, and coordination. Meanwhile, the number of people over 80 is set to triple by 2050, and there aren't enough human caregivers to cover the gap.</p>
+      </div>
+      <div class="aging-card">
+        <h3>The result</h3>
+        <ul>
+          <li>Parents stay independent and feel less lonely</li>
+          <li>Families get peace of mind and early warnings</li>
+          <li>One place keeps everyone informed</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="aging-note">AI for Aging is a wellbeing check-in service. It is not a medical or emergency service.</p>
+
+    <div class="aging-cta">
+      <a href="#contact" class="btn-primary">Talk to us about AI for Aging</a>
+    </div>
+  </div>
+</section>
+
+<section class="demos" id="demo">
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">See It In Action</span>
-      <h2>Real demos, real moments</h2>
+      <h2>Hear the voice agent at work</h2>
     </div>
-    <div class="demo-grid">
-
-      <article class="demo-card">
-        <video controls preload="none" playsinline poster="media/legacy-poster.png" aria-label="AI Legacy Studio demo video">
-          <source src="media/legacy-demo.mp4" type="video/mp4">
-          Your browser does not support video playback.
-        </video>
-        <div class="demo-body">
-          <span class="demo-tag">Demo · AI Legacy Studio</span>
-          <h3>A family's story, restored and retold</h3>
-          <p>Watch an old family photo come back to life and an elder's story told in their own voice — made entirely from our own family's memories.</p>
-          <a href="#contact" class="btn-primary">Preserve your family story</a>
-        </div>
-      </article>
+    <div class="demo-wrap">
 
       <article class="demo-card">
         <video controls preload="none" playsinline poster="media/whatsapp-poster.png" aria-label="WhatsApp and voice AI agent demo video">
@@ -462,7 +529,7 @@
       </article>
 
     </div>
-    <p class="demo-note">Demos use our own and our family's photos, voices, and messages, shared with permission.</p>
+    <p class="demo-note">This demo uses voices and messages from our own team and family, shared with permission.</p>
   </div>
 </section>
 
@@ -476,17 +543,17 @@
       <div class="step">
         <div class="step-num">1</div>
         <h3>Tell us your need</h3>
-        <p>Share what matters — a family story, a business call line, or a parent to look after.</p>
+        <p>Share what matters — a business call line or a parent to look after.</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <h3>We build with AI</h3>
-        <p>Our AI systems handle the heavy lifting — restoration, translation, or real-time monitoring.</p>
+        <p>Our AI handles the heavy lifting — voice conversations, translation, and daily check-ins.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <h3>You stay in control</h3>
-        <p>Simple dashboards and check-ins keep you informed, always.</p>
+        <p>Simple dashboards and summaries keep you informed, always.</p>
       </div>
     </div>
   </div>
@@ -498,7 +565,7 @@
       <span class="eyebrow">Our Mission</span>
       <h2>AI for real human moments</h2>
     </div>
-    <p>We believe AI should serve the moments that matter most — a grandmother's voice, a customer's own language, a parent's wellbeing. Originflow Group exists to build technology that feels less like software, and more like care.</p>
+    <p>We believe AI should serve the moments that matter most — a customer's own language, a parent's wellbeing, a family's peace of mind. Originflow Group exists to build technology that feels less like software, and more like care.</p>
   </div>
 </section>
 

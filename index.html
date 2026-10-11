@@ -180,6 +180,47 @@
   .card a { color: var(--accent-text); font-size: 0.9rem; font-weight: 600; }
   .card a:hover { text-decoration: underline; }
 
+  /* DEMOS */
+  .demos { padding: 40px 0 100px; }
+  .demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+  .demo-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .demo-card video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: #000;
+    display: block;
+  }
+  .demo-body { padding: 28px; display: flex; flex-direction: column; flex: 1; }
+  .demo-tag {
+    color: var(--accent-text);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+  }
+  .demo-body h3 { font-size: 1.2rem; margin-bottom: 10px; font-weight: 600; }
+  .demo-body p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 20px; }
+  .demo-body .btn-primary { margin-top: auto; align-self: flex-start; padding: 12px 24px; font-size: 0.95rem; }
+  .demo-note {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-top: 28px;
+  }
+
   /* HOW IT WORKS */
   .how { padding: 100px 0; background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .steps {
@@ -298,6 +339,7 @@
   @media (max-width: 768px) {
     nav ul { display: none; }
     .footer-inner { flex-direction: column; text-align: center; }
+    .demo-grid { grid-template-columns: 1fr; }
   }
 
   /* COOKIE BANNER */
@@ -328,6 +370,7 @@
     <div class="logo">Origin<span>flow</span></div>
     <ul>
       <li><a href="#services">Services</a></li>
+      <li><a href="#demos">Demos</a></li>
       <li><a href="#how">How it works</a></li>
       <li><a href="#mission">Mission</a></li>
     </ul>
@@ -352,7 +395,7 @@
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">Our Services</span>
-      <h2>Three products. One mission.</h2>
+      <h2>Three services. One mission.</h2>
     </div>
     <div class="cards">
 
@@ -378,6 +421,45 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+<section class="demos" id="demos">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">See It In Action</span>
+      <h2>Real demos, real moments</h2>
+    </div>
+    <div class="demo-grid">
+
+      <article class="demo-card">
+        <video controls preload="none" playsinline poster="media/legacy-poster.png" aria-label="AI Legacy Studio demo video">
+          <source src="media/legacy-demo.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+        <div class="demo-body">
+          <span class="demo-tag">Demo · AI Legacy Studio</span>
+          <h3>A family's story, restored and retold</h3>
+          <p>Watch an old family photo come back to life and an elder's story told in their own voice — made entirely from our own family's memories.</p>
+          <a href="#contact" class="btn-primary">Preserve your family story</a>
+        </div>
+      </article>
+
+      <article class="demo-card">
+        <video controls preload="none" playsinline poster="media/whatsapp-poster.png" aria-label="WhatsApp and voice AI agent demo video">
+          <source src="media/whatsapp-demo.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+        <div class="demo-body">
+          <span class="demo-tag">Demo · Vernacular Voice-AI</span>
+          <h3>One AI agent for calls and WhatsApp</h3>
+          <p>See an AI agent answer customer messages and phone calls in regional languages, around the clock, so no enquiry goes unanswered.</p>
+          <a href="https://wa.me/919985632705?text=Hi%2C%20I%27d%20like%20to%20try%20the%20demo" target="_blank" rel="noopener" class="btn-primary">Try it on WhatsApp</a>
+        </div>
+      </article>
+
+    </div>
+    <p class="demo-note">Demos use our own and our family's photos, voices, and messages, shared with permission.</p>
   </div>
 </section>
 
@@ -524,7 +606,11 @@
   });
 </script>
 
-<script defer src="https://cdn.vercel-insights.com/v1/script.debug.js"></script>
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 
 </body>
 </html>
